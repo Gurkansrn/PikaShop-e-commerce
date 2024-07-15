@@ -1,4 +1,3 @@
-/* Genel stiller */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
 
 * {
@@ -12,7 +11,7 @@ body {
     font-family: "Rubik", sans-serif;  
 }
 
-/* Navbar */
+
 .navbar {
     background-color: #F7EF49;
     padding: 10px 20px;
@@ -22,7 +21,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;/* Navbar'ın diğer içeriklerin üzerinde olmasını sağlar */
+    z-index: 1000;
 }
 
 .navbar-logo img {
@@ -54,37 +53,37 @@ body {
 
 @media (max-width: 650px) {
     .navbar ul {
-        display: none; /* Küçük ekranlarda menüyü gizler */
-        flex-direction: column; /* Menü öğelerini dikey hizalar */
-        position: absolute; /* Menüyü sabit konumdan çıkarır */
-        top: 60px; /* Navbar'ın altına yerleştirir */
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 60px; 
         left: 0;
         background-color: #F7EF49;
         width: 100%;
         text-align: center;
-        z-index: 999; /* Menünün diğer içeriklerin üzerinde olmasını sağlar */
-        transition: max-height 0.3s ease; /* Animasyonlu geçiş ekler */
-        max-height: 0; /* Başlangıçta menüyü gizler */
-        overflow: hidden; /* Görünmeyen menü öğelerini gizler */
+        z-index: 999; 
+        transition: max-height 0.3s ease;
+        max-height: 0; 
+        overflow: hidden; 
     }
 
     .navbar ul.active {
-        max-height: 300px; /* Mobil menüyü açtığınızda görünür yapar */
+        max-height: 300px; 
     }
 
     .navbar li {
-        margin: 10px 0; /* Menü öğeleri arasındaki boşluğu ayarlar */
-        display: block; /* Mobilde menü öğelerini blok halinde gösterir */
+        margin: 10px 0; 
+        display: block; 
     }
 
     .navbar a {
         padding: 10px;
-        display: block; /* Mobilde menü bağlantılarını blok halinde gösterir */
+        display: block; 
     }
 }
 
 
-/* Banner ve Hoşgeldiniz Mesajı */
+
 .banner {
     margin-bottom: 20px;
     position: relative;
@@ -94,12 +93,12 @@ body {
 .banner img {
     max-width: 100%;
     height: auto;
-    opacity: 0.8; /* Resmin transparanlığı */
+    opacity: 0.8;
 }
 
 .welcome-message {
     position: absolute;
-    top: 20%; /* Ekranın üstünden %20 aşağıda */
+    top: 20%; 
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -117,12 +116,12 @@ body {
     .welcome-message {
         font-size: 0.9em;
         padding: 10px;
-        width: 90%; /* Mobil boyutta genişlik %90 olarak ayarlandı */
-        max-width: none; /* Maksimum genişlik sınırlaması kaldırıldı */
+        width: 90%; 
+        max-width: none; 
     }
 }
 
-/* Ürünler Bölümü */
+
 .products-section {
     padding: 20px;
     text-align: center;
@@ -135,7 +134,7 @@ body {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px; /* Dikey boşluk */
+    gap: 20px; 
 }
 
 .product {
@@ -144,7 +143,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
-    margin-bottom: 30px; /* Dikey mesafe */
+    margin-bottom: 30px; 
     transition: transform 0.2s ease-in-out;
 }
 
@@ -152,32 +151,32 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    border: 2px solid #ddd; /* Resmin dışına 1px kalınlığında gri bir çizgi çeker */
+    border: 2px solid #ddd; 
     transition: transform 0.2s ease-in-out;
 }
 
 .product h3 {
     margin: 10px 0;
-    font-size: 0.9em; /* Başlık font boyutu küçültüldü */
+    font-size: 0.9em; 
 }
 
 .product p {
-    font-size: 0.8em; /* Fiyat font boyutu küçültüldü */
-    margin-bottom: 10px; /* Fiyat ile kart altı arası mesafe azaltıldı */
+    font-size: 0.8em; 
+    margin-bottom: 10px; 
 }
 
 .product:hover {
-    transform: translateY(-3px); /* Hover efekti eklendi */
+    transform: translateY(-3px); 
 }
 
 @media (max-width: 768px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px; /* Küçük ekranlarda sütun sayısını ve boşlukları ayarlar */
+        gap: 10px; 
     }
 }
 
-/* Müşteri Yorumları Bölümü */
+
 .reviews-section {
     padding: 40px;
     background-color: #f4f4f4;
@@ -214,11 +213,11 @@ body {
 
 @media (max-width: 768px) {
     .review-grid {
-        grid-template-columns: repeat(1, 1fr); /* Küçük ekranlarda tek sütunlu yapar */
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
-/* Hakkımızda Bölümü */
+
 .about-section {
     padding: 40px;
     text-align: center;
@@ -241,16 +240,16 @@ body {
     margin: 0 auto;
 }
 
-/* Footer */
+
 footer {
     background-color: #34495E;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    position: relative; /* Fixed yerine relative olarak ayarlandı */
+    position: relative; 
     bottom: 0;
     width: 100%;
-    margin-top: 20px; /* Footer ile arasında 20px boşluk bırakır */
+    margin-top: 20px; 
 }
 
 @media (max-width: 768px) {
