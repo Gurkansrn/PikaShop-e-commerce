@@ -1,0 +1,260 @@
+/* Genel stiller */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
+
+* {
+    font-family: "Rubik", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Rubik", sans-serif;  
+}
+
+/* Navbar */
+.navbar {
+    background-color: #F7EF49;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;/* Navbar'ın diğer içeriklerin üzerinde olmasını sağlar */
+}
+
+.navbar-logo img {
+    margin-left: 20px;
+    max-width: 150px;
+    height: auto;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #E74C3C;
+    color: white;
+}
+
+@media (max-width: 650px) {
+    .navbar ul {
+        display: none; /* Küçük ekranlarda menüyü gizler */
+        flex-direction: column; /* Menü öğelerini dikey hizalar */
+        position: absolute; /* Menüyü sabit konumdan çıkarır */
+        top: 60px; /* Navbar'ın altına yerleştirir */
+        left: 0;
+        background-color: #F7EF49;
+        width: 100%;
+        text-align: center;
+        z-index: 999; /* Menünün diğer içeriklerin üzerinde olmasını sağlar */
+        transition: max-height 0.3s ease; /* Animasyonlu geçiş ekler */
+        max-height: 0; /* Başlangıçta menüyü gizler */
+        overflow: hidden; /* Görünmeyen menü öğelerini gizler */
+    }
+
+    .navbar ul.active {
+        max-height: 300px; /* Mobil menüyü açtığınızda görünür yapar */
+    }
+
+    .navbar li {
+        margin: 10px 0; /* Menü öğeleri arasındaki boşluğu ayarlar */
+        display: block; /* Mobilde menü öğelerini blok halinde gösterir */
+    }
+
+    .navbar a {
+        padding: 10px;
+        display: block; /* Mobilde menü bağlantılarını blok halinde gösterir */
+    }
+}
+
+
+/* Banner ve Hoşgeldiniz Mesajı */
+.banner {
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.banner img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8; /* Resmin transparanlığı */
+}
+
+.welcome-message {
+    position: absolute;
+    top: 20%; /* Ekranın üstünden %20 aşağıda */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .welcome-message {
+        font-size: 0.9em;
+        padding: 10px;
+        width: 90%; /* Mobil boyutta genişlik %90 olarak ayarlandı */
+        max-width: none; /* Maksimum genişlik sınırlaması kaldırıldı */
+    }
+}
+
+/* Ürünler Bölümü */
+.products-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.products-section h2 {
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Dikey boşluk */
+}
+
+.product {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 30px; /* Dikey mesafe */
+    transition: transform 0.2s ease-in-out;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #ddd; /* Resmin dışına 1px kalınlığında gri bir çizgi çeker */
+    transition: transform 0.2s ease-in-out;
+}
+
+.product h3 {
+    margin: 10px 0;
+    font-size: 0.9em; /* Başlık font boyutu küçültüldü */
+}
+
+.product p {
+    font-size: 0.8em; /* Fiyat font boyutu küçültüldü */
+    margin-bottom: 10px; /* Fiyat ile kart altı arası mesafe azaltıldı */
+}
+
+.product:hover {
+    transform: translateY(-3px); /* Hover efekti eklendi */
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* Küçük ekranlarda sütun sayısını ve boşlukları ayarlar */
+    }
+}
+
+/* Müşteri Yorumları Bölümü */
+.reviews-section {
+    padding: 40px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.reviews-section h2 {
+    margin-bottom: 20px;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review-card {
+    padding: 20px;
+    margin: 10px auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 300px;
+}
+
+.review-card p {
+    font-style: italic;
+}
+
+.review-card h4 {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .review-grid {
+        grid-template-columns: repeat(1, 1fr); /* Küçük ekranlarda tek sütunlu yapar */
+    }
+}
+
+/* Hakkımızda Bölümü */
+.about-section {
+    padding: 40px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.about-section h2 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666666;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    background-color: #34495E;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative; /* Fixed yerine relative olarak ayarlandı */
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px; /* Footer ile arasında 20px boşluk bırakır */
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 2rem 0;
+    }
+}
